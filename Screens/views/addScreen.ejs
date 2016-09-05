@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>
+        <% include partials/topnav %>
+
+        <div class="container addForm page-wrap">
+            <div class="header">
+                <!--<img src="/images/dwp-logo.png" alt="DWP Logo">-->
+                <h1 class="">Add a Screen</h1>
+                <p class="updateScreen">Fields with an * are mandatory.</p>
+            </div>
+            
+            <div class="col-md-12">
+                <div id="alerts" class="alert alert-danger" style='display:none;'></div>
+                
+                <form action="/screens/add" method="post" class="form-horizontal" id="addForm">
+                    <div class="form-group buffer"> <!-- Start of new input -->
+                        <label for="serialNumber" class="col-md-4 control-label">Raspberry Pi Number: *</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="piNumber" name="piNumber" required>
+                        </div>
+                    </div> <!-- End of Input -->
+                    
+                    <div class="form-group"><!-- Start of new input -->
+                        <label for="serialNumber" class="col-md-4 control-label">Screen Owner Name: *</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="screenOwner" name="screenOwner" required>
+                        </div>
+                    </div> <!-- End of Input -->
+                    
+                    <div class="form-group"><!-- Start of new input -->
+                        <label for="serialNumber" class="col-md-4 control-label">Project/team Name:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="projectName" name="projectName" >
+                        </div>
+                    </div> <!-- End of Input -->
+                    
+                    <div class="form-group pull-right">
+                        <input type="button" class="btn btn-primary" id="submitNewScreen" value="Submit">
+                    </div>
+                </form>
+            </div>
+            
+          
+            
+            
+        </div>
+        <% include partials/footer %>
+        <% include partials/scripts %>
+    </body>
+</html>

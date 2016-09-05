@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include partials/head %>    
+    </head>
+    <body>
+        <% include partials/topnav %>
+
+        <div class="container page-wrap">
+            <div class="header">
+                <!--<img src="/images/dwp-logo.png" alt="DWP Logo">-->
+                <h1 class="">Add a Screen</h1>
+            </div>
+            
+            <div class="col-md-12">
+                <form action="" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="title" class="col-md-2 control-label">Title *</label>
+                        <div class="col-md-10">
+                            <select name="title" class="form-control" required>
+                                <option value="-1">Please Select a Screen</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                                
+                    </div>
+                    
+                
+                    
+                    <div class="form-group pull-right">
+                        <input type="button" class="btn btn-primary" id="submit" value="Submit">
+                        <input type="button" class="btn btn-default" id="reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+            
+          
+            
+            
+        </div>
+        <% include partials/footer %>
+        <% include partials/scripts %>
+    </body>
+</html>

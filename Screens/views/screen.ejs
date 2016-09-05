@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>
+        
+        <% include partials/topnav %>
+        
+        <div class="container page-wrap">
+            <div class="well jumbotron">
+                <h1 class="bold top50">Smart Screens Details</h1>
+                <p class="top50">Below is a detailed description of the screens along with the option to change url's. </p>
+            </div>
+            
+                    
+        <table class="table" id="screenDetails">
+            <tr>
+                <th class="screenLabel">Screen Owner</th>
+                <td class="screenDetail"><%= screen.screenOwner %></td>
+            </tr>
+            
+            <tr>
+                <th class="screenLabel">Project Name</th>
+                <td class="screenDetail"><%= screen.projectName %></td>
+            </tr>
+            
+            <tr>
+                <th class="screenLabel">Pi ID</th>
+                <td class="screenDetail"><%= screen.piNumber %></td>
+            </tr>
+            
+            <tr id="url">
+                <th class="screenLabel">Active URL's</th>
+                <td class="screenDetail"><ol type="1" id="urlList"></ul></td>
+            </tr>
+        </table>
+    
+        <table class="table urlTable">
+            <div class="form-group">
+                <div id='urlError'>
+                </div>
+                <tr>
+                    <th class="col-md-4 urlInput">
+                        <label for="urls" class="control-label pull-right">Enter URL to display on this screen:</label>
+                    </th>
+                    <th class="col-md-8 urlDetail">
+                            <div class="input-group">
+                                <input for="url" type="text" class="form-control" id="addUrl" name="url" placeholder="URL">
+                                <span class="input-group-btn">
+                                    <input type="button" class="btn btn-secondary" id="newUrl" value="Go!">
+                                </span>
+                            </div>
+                    </th>
+                </tr>
+            </div>
+            </table>
+            
+            <div class="form-group pull-right">
+                <a href="/screens/edit/<%= screen.id %>"><button title="edit" value="Edit" class="btn btn-primary screenBtn" name="edit" id="edit">Edit</button></a>
+                <a href="/screens/remove/<%= screen.id %>" id="remove"><button title="remove" value="Remove" class="btn btn-default screenBtn" name="remove">Remove</button></a>
+            </div>
+        
+            <div>
+                <form>
+                    <input type="hidden" id="screenID" value="<%= screen.id %>"/>
+                </form>    
+            </div>
+        
+        </div>
+        <% include partials/footer %>
+        <% include partials/scripts %>
+    </body>
+</html>

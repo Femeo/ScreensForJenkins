@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>
+        <% include partials/topnav %>
+        
+        <div class="container page-wrap">
+            <div class="well jumbotron">
+                <h1 class="top50">Welcome to the Screen's Hub</h1>
+                <p class="top50 -textbolder">To add or modify content which is displayed on the smart-screens located around Tech Lab, you must select the relevant screen and then add or remove a URL from the bottom of the screen.</p>
+            <div id="alerts" class="text-center"></div>
+            </div>
+        
+        <table id="screenList" class="table table-striped">
+                <tr>
+                    <th>Screen Owner</th>
+                    <th>Project Name</th>
+                    <th>Pi ID</th>
+                    <th class="text-center">View</th>
+                </tr>
+        
+            <% if(screens.length > 0){
+                screens.forEach(function(screen){%>
+
+            <tr>
+                <!-- screen state img -->
+                <td><%= screen.screenOwner %></td>
+                <td><%= screen.projectName %></td>
+                <td><%= screen.piNumber %></td>
+                <td class="text-center"><a href="/screens/view/<%= screen.id %>" id="viewScreen"><span class="glyphicon glyphicon-share-alt"></span></a></td>
+            </tr>
+            <% }); %>
+            <% } else { %>
+            <tr>
+                <td id="noScreensAvailable" colspan="6" class="text-center">No screens available.</td>
+            </tr>
+            <% } %>
+        </table>
+            
+            <div class="unassigned col-md-6">
+            <table class="table table-striped ">
+                <h4>Unassigned Screens</h4>
+                <tr>
+                    <th width="10%" class="text-center">Screen State</th>
+                    <th>Screen ID</th>
+                    <th class="text-center">Assign</th>
+                </tr>
+                <tr>
+                    <td><div class="text-center"><img src="/images/red-light.png" class="imgStatus text-center"></div></td>
+                    <td>54RD794</td>
+                    <td class="text-center"><a href="/screens/view"><span class="glyphicon glyphicon-link"></span></a></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        
+        <% include partials/footer %>
+        <% include partials/scripts %>
+    </body>
+</html>

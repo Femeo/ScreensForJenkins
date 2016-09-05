@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+    <style>
+        html,
+        body,
+        iframe {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+        }
+        iframe {
+                display: block;
+                border: 0;
+                -moz-transition:    all .4s;
+                -webkit-transition: all .4s;
+                -ms-transition:     all .4s;
+                -o-transition:      all .4s;
+                transition:         all .4s;
+        }
+        iframe.fade {
+                opacity: 0;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>        
+    </head>
+    <body>
+        <iframe id="iframe"></iframe>
+
+        <script>
+        var request = "http://192.168.254.218:3000/screens/pi/1";
+        var iframe;
+        var i = 0;
+        var delay = 15; // seconds
+        var welcomeScreen = "www.bbc.co.uk/news";
+
+        var urls = [];
+        
+        function fetchUrls()
+        {
+            urls = [];
+
+            iframe = document.getElementById("iframe");
+            iframe.src = welcomeScreen //'file:///home/pi/screen-automation/application/images/screenplacer_missing_pi.jpg';
+
+            $.getJSON(request, function(data){
+                $.each(data.screens, function(x, obj){
+                    urls.push(obj.link);
+                });
+            });
+
+            if (urls.length === 0){
+                urls.push(welcomeScreen);//'file:///home/pi/screen-automation/application/images/screenplacer_server_not_available.jpg'
+            }
+        }
+
+        function loop_urls(){
+            i++;
+            i %= urls.length;
+            iframe.className = "fade";
+            
+            iframe.onload = function(){
+                iframe.className = "";
+                window.setTimeout(loop_urls, delay * 1000);
+            }
+
+            iframe.src = urls[i]; //urls[i].indexOf("http") !== -1 ? urls[i] : "http://" + urls[i];
+        }
+
+        $(document).ready(function(){
+            fetchUrls();
+            iframe = document.getElementById("iframe");
+            iframe.src = welcomeScreen;
+
+            window.setTimeout(loop_urls, delay * 1000);
+        });
+        </script>
+    </body>
+</html>

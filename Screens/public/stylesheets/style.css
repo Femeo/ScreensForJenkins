@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html{
+    height:100%;
+}
+body {
+    height:100%;
+  padding-top: 70px;
+  padding-bottom:5px;
+  font: 16px "Roboto", "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #0076A3;
+}
+
+.header img {
+    float: left;
+    width: 100px;
+    height: 100px;   
+    margin-right: 50px;
+}
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+    vertical-align: bottom;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.buffer {
+    margin-top: 20px;
+}
+
+/* The following three classes give the chosen element 50px, 100px, 150px margin-top respectively */ 
+
+.top150 {
+    margin-top: 150px;
+}
+
+.top100{
+    margin-top: 100px;
+}
+
+.top50{
+    margin-top: 50px;
+}
+
+.imgStatus {
+    width: 25px;
+    height: 25px;
+}
+
+.logo{
+    margin-top: -10px;
+    width: 35px;
+    height: 35px;
+    display: inline;
+}
+
+.urlSection{
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    width: 50%;
+}
+
+
+.noDisplay{
+    font-size: 175px;
+}
+
+.noDisplayTxt {
+    font-size: 45px;
+}
+
+.glyphicon {
+    color: black;
+}
+
+span:hover{
+    color: #0076A3;
+}
+
+.unassigned {
+    display: none;
+}
+    
+.addForm{
+    padding: 100px;
+    
+}
+
+.errors{
+    text-align: center;
+    font: bold;
+}
+
+th {
+    background-color: #0076A3;
+    color: white;
+}
+
+#screenList{
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.screenLabel{
+    width: 40%;
+}
+.screenDetail{
+    padding: 30px;
+    width: 60%;
+    color: #0076A3;
+    font-weight: bold;
+}
+
+#submitUpdateScreen, #submitNewScreen {
+    margin-right: 15px;
+    width: 100px;
+}
+
+.updateScreen{
+    margin: 15px;
+    padding-top: 50px;
+}
+
+.addScreen{
+    margin: 15px;
+    padding-top: 50px;
+}
+
+.screenBtn {
+    width: 120px;
+}
+
+.urlScreenList {
+    list-style: none;
+    border: 0.5px solid #0076A3;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+#urlList {
+    padding-left: 10px;
+}
+.footer, .page-wrap:after {
+  height: 58px; 
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -60px; 
+}
+
+.footer {
+    background-color: rgb(249, 249, 249);
+    line-height: 3;
+    position: relative;
+    bottom: 0;
+    width:100%;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.builtBy{
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    padding:5px;
+}
+
+.accessibility{
+    background-color: #0076A3;
+    color: white;
+    float: right;
+    padding: 5px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.red-light{
+    background-color:red;
+    height:22px;
+    border-radius:50%;
+    width: 22px;
+    border: 1px solid black;
+    margin-left:45%;
+}
+
+.green-light{
+    background-color: green;
+    height:22px;
+    border-radius:50%;
+    width: 22px;
+    border: 1px solid black;
+    margin-left:45%;    
+}
+
+#noScreensAvailable{
+    padding-top: 25px;
+    font-size: 25px;
+}
+
+#so {
+    padding-right: 500px;
+}
+
+.ui-sortable {
+    list-style-type: none;
+}
+
+.ui-sortable-placeholder {
+  border: 3px dashed #aaa;
+  border-radius: 12px;
+  height: 45px;
+  width: auto;
+  background: #ccc;
+}

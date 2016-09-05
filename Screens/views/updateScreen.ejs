@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>        
+        <% include partials/topnav %>
+        <div class="container addForm page-wrap">
+            <div class="header">
+                <!--<img src="/images/dwp-logo.png" alt="DWP Logo">-->
+                <h1>Update Screen Information</h1>
+                <p class="updateScreen">Edit a screens details and choose a new screen owner for the screen.</p>
+            </div>
+            
+            <div id="alerts" class="alert alert-danger top50" style='display:none;'></div> 
+            
+            <div class="col-md-12">
+                <form action="/screens/edit/<%=screen.id%>" method="post" class="form-horizontal" id="addForm">
+                    <div class="form-group buffer"> <!-- Start of new input -->
+                        <label for="projectNumber" class="col-md-4 control-label">Project Name:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="projectName" name="projectName" value="<%= screen.projectName %>"> 
+                        </div>
+                    </div> <!-- End of Input -->
+                    
+                    <div class="form-group"><!-- Start of new input -->
+                        <label for="screenOwner" class="col-md-4 control-label">Screen Owner Name:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="screenOwner" name="screenOwner" value="<%= screen.screenOwner %>">
+                        </div>
+                    </div> <!-- End of Input -->
+                    
+                    <div class="form-group"><!-- Start of new input -->
+                        <label for="piID" class="col-md-4 control-label">Pi ID:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="piNumber" name="piNumber" value="<%= screen.piNumber %>">
+                        </div>
+                    </div> <!-- End of Input -->                
+                    
+                    <div class="form-group pull-right">
+                        <input type="submit" class="btn btn-primary" id="submitUpdateScreen" value="Update">
+                    </div>
+                </form>
+            </div>  
+        </div>
+        <% include partials/footer %>
+        <% include partials/scripts %>
+    </body>
+</html>
